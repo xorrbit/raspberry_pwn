@@ -80,6 +80,7 @@ mkdir /opt/metasploit
 wget http://downloads.metasploit.com/data/releases/framework-latest.tar.bz2
 tar jxvf framework-latest.tar.bz2 -C /opt/metasploit
 ln -sf /opt/metasploit/msf3/msf* /usr/local/bin/
+rm framework-latest.tar.bz2
 echo "[+] Latest Metasploit Framework installed."
 
 # Install Perl/Python tools to /pentest
@@ -108,10 +109,10 @@ cp src/motd.tail.raspberrypwn /etc/motd
 
 # Install Exploit-DB
 echo "[+] Installing Exploit-DB to /pentest..."
-mkdir -p /pentest/exploitdb
-cd /pentest/exploitdb/
-wget  http://www.exploit-db.com/archive.tar.bz2
-tar -xjvf archive.tar.bz2 
+wget https://github.com/offensive-security/exploit-database/archive/master.zip
+# this will extractit to /pentest/exploit-database-master/
+unzip master.zip -d /pentest
+rm master.zip
 echo "[+] Exploit-DB installed in /pentest."
 
 echo "[+] Setting default RAM allocation (disabled!)"
