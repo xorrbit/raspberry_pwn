@@ -68,7 +68,7 @@ echo "[+] Installing wireless pentesting tools..."
 aptitude -y install kismet
 cd src/aircrack-ng-1.2-rc1
 chmod +x evalrev
-make install
+make -j5 install
 cd ../..
 airodump-ng-oui-update
 echo "[+] Wireless pentesting tools installed."
